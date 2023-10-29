@@ -1,1 +1,0 @@
-- Option mit Text auf der Konsole
