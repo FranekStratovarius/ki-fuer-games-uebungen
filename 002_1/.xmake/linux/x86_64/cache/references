@@ -1,0 +1,10 @@
+{
+    packages = {
+        "/home/louis/.xmake/packages/u/util-macros/1.19.3/d17c933f87f247f4915d3d4b16d5975a",
+        "/home/louis/.xmake/packages/x/xtrans/1.4.0/576fb3beba324ff6ba8b503904027ceb",
+        "/home/louis/.xmake/packages/p/python/3.11.3/d8c248d43f4141a9b452cf40280c9f68",
+        "/home/louis/.xmake/packages/l/libpthread-stubs/0.4/614c096241464f3e9897bd4661143059",
+        "/home/louis/.xmake/packages/r/raylib/4.5.0/0d0f6226d4fe47279c0da40af2f0a513",
+        "/home/louis/.xmake/packages/r/raygui/3.2/44dc89ee0e514ddd81c34c2525e568e1"
+    }
+}

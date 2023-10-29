@@ -1,0 +1,36 @@
+[
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/npc/include", "-DPLATFORM_DESKTOP", "-I", "/home/louis/.xmake/packages/r/raylib/4.5.0/0d0f6226d4fe47279c0da40af2f0a513/include", "-I", "/usr/include/python3.11", "-o", "build/.objs/npc/linux/x86_64/debug/__/libraries/npc/src/npc.cpp.o", "../libraries/npc/src/npc.cpp"],
+  "file": "../libraries/npc/src/npc.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/npc/include", "-DPLATFORM_DESKTOP", "-I", "/home/louis/.xmake/packages/r/raylib/4.5.0/0d0f6226d4fe47279c0da40af2f0a513/include", "-I", "/usr/include/python3.11", "-o", "build/.objs/npc/linux/x86_64/debug/__/libraries/npc/src/world.cpp.o", "../libraries/npc/src/world.cpp"],
+  "file": "../libraries/npc/src/world.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/npc/include", "-DPLATFORM_DESKTOP", "-I", "/home/louis/.xmake/packages/r/raylib/4.5.0/0d0f6226d4fe47279c0da40af2f0a513/include", "-I", "/usr/include/python3.11", "-o", "build/.objs/npc/linux/x86_64/debug/__/libraries/npc/src/option.cpp.o", "../libraries/npc/src/option.cpp"],
+  "file": "../libraries/npc/src/option.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/random/include", "-o", "build/.objs/random/linux/x86_64/debug/__/libraries/random/src/perlin_noise.cpp.o", "../libraries/random/src/perlin_noise.cpp"],
+  "file": "../libraries/random/src/perlin_noise.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/random/include", "-o", "build/.objs/random/linux/x86_64/debug/__/libraries/random/src/random.cpp.o", "../libraries/random/src/random.cpp"],
+  "file": "../libraries/random/src/random.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-fPIC", "-g", "-Wall", "-Werror", "-O0", "-I../libraries/random/include", "-o", "build/.objs/random/linux/x86_64/debug/__/libraries/random/src/octave.cpp.o", "../libraries/random/src/octave.cpp"],
+  "file": "../libraries/random/src/octave.cpp"
+},
+{
+  "directory": "/mnt/vault/wichtiges/kempten/s7-ws23-24/ki-fuer-games/uebungen/002_1",
+  "arguments": ["/usr/bin/gcc", "-c", "-m64", "-g", "-Wall", "-Werror", "-O0", "-Iinclude", "-I../libraries/random/include", "-DPLATFORM_DESKTOP", "-DRAYGUI_IMPLEMENTATION", "-I", "/home/louis/.xmake/packages/r/raygui/3.2/44dc89ee0e514ddd81c34c2525e568e1/include", "-I", "/home/louis/.xmake/packages/r/raylib/4.5.0/0d0f6226d4fe47279c0da40af2f0a513/include", "-I", "/usr/include/python3.11", "-o", "build/.objs/uebung_002_1/linux/x86_64/debug/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]

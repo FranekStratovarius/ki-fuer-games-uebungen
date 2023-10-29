@@ -1,0 +1,12 @@
+{
+    options = {
+        plat = "linux",
+        arch = "x86_64",
+        mode = "debug"
+    },
+    recheck = false,
+    mtimes = {
+        ["xmake.lua"] = 1698586003,
+        ["../libraries/xmake.lua"] = 1698585845
+    }
+}

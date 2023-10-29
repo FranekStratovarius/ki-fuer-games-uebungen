@@ -1,0 +1,7 @@
+{
+    errdata = "\27[01m\27[Ksrc/random.cpp:\27[m\27[K In member function ‘\27[01m\27[Kint Random::\27[01;32m\27[Krandom_normal_distribution_int\27[m\27[K(int, int)\27[m\27[K’:\
+\27[01m\27[Ksrc/random.cpp:26:1:\27[m\27[K \27[01;35m\27[Kwarning: \27[m\27[Kno return statement in function returning non-void [\27[01;35m\27[K-Wreturn-type\27[m\27[K]\
+   26 | \27[01;35m\27[K}\27[m\27[K\
+      | \27[01;35m\27[K^\27[m\27[K\
+"
+}

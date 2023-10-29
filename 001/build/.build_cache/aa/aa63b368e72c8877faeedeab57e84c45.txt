@@ -1,0 +1,10 @@
+{
+    errdata = "\27[01m\27[Ksrc/main.cpp:\27[m\27[K In function ‘\27[01m\27[Kint\27[01;32m\27[K main\27[m\27[K()\27[m\27[K’:\
+\27[01m\27[Ksrc/main.cpp:50:44:\27[m\27[K \27[01;35m\27[Kwarning: \27[m\27[Knarrowing conversion of ‘\27[01m\27[KGetRandomValue(20, 255)\27[m\27[K’ from ‘\27[01m\27[Kint\27[m\27[K’ to ‘\27[01m\27[Kunsigned char\27[m\27[K’ [\27[01;35m\27[K-Wnarrowing\27[m\27[K]\
+   50 |         colors[i] = (Color){ \27[01;35m\27[KGetRandomValue(20, 255)\27[m\27[K, GetRandomValue(10, 55), 30, 255 };\
+      |                              \27[01;35m\27[K~~~~~~~~~~~~~~^~~~~~~~~\27[m\27[K\
+\27[01m\27[Ksrc/main.cpp:50:69:\27[m\27[K \27[01;35m\27[Kwarning: \27[m\27[Knarrowing conversion of ‘\27[01m\27[KGetRandomValue(10, 55)\27[m\27[K’ from ‘\27[01m\27[Kint\27[m\27[K’ to ‘\27[01m\27[Kunsigned char\27[m\27[K’ [\27[01;35m\27[K-Wnarrowing\27[m\27[K]\
+   50 |         colors[i] = (Color){ GetRandomValue(20, 255), \27[01;35m\27[KGetRandomValue(10, 55)\27[m\27[K, 30, 255 };\
+      |                                                       \27[01;35m\27[K~~~~~~~~~~~~~~^~~~~~~~\27[m\27[K\
+"
+}
