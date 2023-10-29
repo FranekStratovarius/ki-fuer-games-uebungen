@@ -1,3 +1,0 @@
-[ 25%]: cache compiling.debug ../libraries/random/src/random.cpp
-[ 50%]: linking.debug librandom.so
-[100%]: build ok, spent 2.311s
