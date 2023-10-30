@@ -50,7 +50,6 @@ float Random::random_normal_distribution_float(
 	float start, float end,
 	float mean, float stddev
 ) {
-	printf("start: %f, end: %f\n", start, end);
 	// roll normal distribution untill it is in bounds
 	float normal_distribution = roll_normal_deviation(mean, stddev);
 	//*
