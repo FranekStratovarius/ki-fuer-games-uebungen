@@ -18,7 +18,7 @@ int main(void) {
 
 	// Random random = Random();
 	// Octave octave = Octave(1);
-	PerlinNoise perlin_noise = PerlinNoise(5, 0.5);
+	PerlinNoise1D perlin_noise = PerlinNoise1D(5, 0.5);
 
 	while (!WindowShouldClose()) {
 		dynamic_screen_width = GetScreenWidth();

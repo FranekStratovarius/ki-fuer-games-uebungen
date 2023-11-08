@@ -3,15 +3,18 @@
 
 #include "octave.hpp"
 
-class PerlinNoise {
+class PerlinNoise1D {
 	public:
-		PerlinNoise(int ranks, float persistence);
+		PerlinNoise1D(int ranks, float persistence);
 		float get(float t);
+		float update(float delta_time);
 	private:
 		int ranks;
 		float persistence;
 		// array of octaves
 		Octave* octaves;
+		// used for continuous update
+		float elapsed_time;
 };
 
 #endif // PERLIN_NOISE_HPP
