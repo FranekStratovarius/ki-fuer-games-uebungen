@@ -9,16 +9,13 @@ Octave::Octave(int rank) {
 	this->rank = rank;
 
 	signal_values_count = std::pow(2, rank - 1) + 1;
-	printf("rank: %i\nsignal values: %i\n", rank, signal_values_count);
-	signal_values = (float*)malloc(signal_values_count * sizeof(int) * 2);
+	signal_values = (float*)malloc(signal_values_count * sizeof(int));
 
 	Random random = Random();
 
 	for (int i = 0; i < signal_values_count; i++) {
-		// spread values equidistant
-		signal_values[i * 2] = 1.0f / (signal_values_count - 1) * i;
 		// add random number
-		signal_values[i * 2 + 1] = random.random_uniform_distribution_float(0.0f, 1.0f);
+		signal_values[i] = random.random_uniform_distribution_float(0.0f, 1.0f);
 	}
 }
 
@@ -29,8 +26,8 @@ float s_curve_interpolation(float t) {
 float Octave::get(float t) {
 	int tj = std::floor(t * (signal_values_count - 1));
 	int tk = std::floor(t * (signal_values_count - 1)) + 1;
-	float sj = signal_values[tj * 2 + 1];
-	float sk = signal_values[tk * 2 + 1];
+	float sj = signal_values[tj];
+	float sk = signal_values[tk];
 
 	return sj + (sk - sj) * s_curve_interpolation(
 		(

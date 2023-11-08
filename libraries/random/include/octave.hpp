@@ -8,7 +8,7 @@ class Octave {
 	private:
 		int rank;
 		int signal_values_count;
-		// array with signal values s_i as touple (t, s)
+		// array with signal values s_i
 		float* signal_values;
 };
 
