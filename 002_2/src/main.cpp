@@ -3,6 +3,7 @@
 
 #include "random.hpp"
 #include "octave.hpp"
+#include "perlin_noise.hpp"
 
 int main(void) {
 	const int screen_width = 800;
@@ -15,8 +16,9 @@ int main(void) {
 
 	SetTargetFPS(60);
 
-	//Random random = Random();
-	Octave octave = Octave(4);
+	// Random random = Random();
+	// Octave octave = Octave(1);
+	PerlinNoise perlin_noise = PerlinNoise(5, 0.5);
 
 	while (!WindowShouldClose()) {
 		dynamic_screen_width = GetScreenWidth();
@@ -69,7 +71,8 @@ int main(void) {
 					dynamic_screen_height * 0.1f
 				);
 				//*/
-				float y = octave.get(x / (dynamic_screen_width * 0.8));
+				// float y = octave.get(x / (dynamic_screen_width * 0.8));
+				float y = perlin_noise.get(x / (dynamic_screen_width * 0.8));
 				DrawCircle(
 					dynamic_screen_width * 0.1 + x,
 					dynamic_screen_height * 0.9 - dynamic_screen_height * 0.8 * y,
