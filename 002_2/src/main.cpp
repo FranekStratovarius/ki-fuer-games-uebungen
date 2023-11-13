@@ -19,6 +19,7 @@ int main(void) {
 	// Random random = Random();
 	// Octave octave = Octave(1);
 	PerlinNoise1D perlin_noise = PerlinNoise1D(5, 0.5);
+	PerlinNoise1D continuous_perlin_noise = PerlinNoise1D(5, 0.5);
 
 	while (!WindowShouldClose()) {
 		dynamic_screen_width = GetScreenWidth();
@@ -80,6 +81,16 @@ int main(void) {
 					BLUE
 				);
 			}
+
+			DrawCircle(
+				dynamic_screen_width * 0.9,
+				dynamic_screen_height * 0.9
+					- dynamic_screen_height * 0.8
+					// * continuous_perlin_noise.update(0.01),
+					* continuous_perlin_noise.update(GetFrameTime()),
+				3.0f,
+				RED
+			);
 		EndDrawing();
 	}
 

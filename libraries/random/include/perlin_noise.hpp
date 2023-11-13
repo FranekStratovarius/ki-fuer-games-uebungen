@@ -14,7 +14,7 @@ class PerlinNoise1D {
 		// array of octaves
 		Octave* octaves;
 		// used for continuous update
-		float elapsed_time;
+		float elapsed_time = 0.0f;
 };
 
 #endif // PERLIN_NOISE_HPP
