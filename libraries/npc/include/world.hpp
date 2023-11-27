@@ -2,12 +2,19 @@
 #define WORLD_HPP
 
 #include "npc.hpp"
+#include "blackboard.hpp"
 
 class World {
 	public:
-		void draw_npcs_in_world();
+		World();
+		World(int number_of_npcs);
+		~World();
+		void update(float delta_time);
+		void draw();
+		Blackboard *getSharedBlackboard();
 	private:
-		Npc* npcs_in_world;
+		std::vector<Npc*> npcs_in_world;
+		Blackboard *sharedBlackboard;
 };
 
 #endif // WORLD_HPP

@@ -1,11 +1,11 @@
-#include <cstdlib>
+#include <cstdio>
 
+#include "blackboard.hpp"
 #include "raylib.h"
 #include "raymath.h"
 
 #include "npc.hpp"
-
-# define M_PIl          3.141592653589793238462643383279502884L /* pi */
+#include "target_knowledge.hpp"
 
 Npc::Npc() {
 	Vector2 position = {
@@ -47,27 +47,9 @@ Npc::Npc(Vector2 position, float rotation, Color color) {
 	this->init(position, rotation, color);
 }
 
-void Npc::init(Vector2 position, float rotation, Color color) {
-	this->position = position;
-	this->rotation = rotation;
-	this->color = color;
-}
-
-void Npc::move(Vector2 delta_position) {
-	this->position = Vector2Add(this->position, delta_position);
-}
-
-void Npc::rotate(float angle) {
-	this->rotation += angle;
-}
-
-void Npc::change_color(Color color) {
-	this->color = color;
-}
-
 void Npc::draw() {
-	float position_x = this->position.x;
-	float position_z = this->position.y;
+	float position_x = kinematics.position.x;
+	float position_z = kinematics.position.y;
 	// draw main body
 	DrawCapsule(
 		(Vector3) {position_x, 1.0f, position_z},
@@ -78,10 +60,32 @@ void Npc::draw() {
 		this->color
 	);
 	// draw nose
-	Vector2 nose_position = Vector2Add(this->position, Vector2Rotate({1, 0}, this->rotation));
+	Vector2 nose_position = Vector2Add(kinematics.position, Vector2Rotate({1, 0}, kinematics.rotation));
 	DrawSphere(
 		{nose_position.x, 2.5f, nose_position.y},
 		0.5f,
-		SKYBLUE //this->color
+		SKYBLUE
 	);
+}
+
+void Npc::update(float delta_time) {
+	// //***************** Sense *****************
+	// sensorManager.update(delta_time);
+	// //***************** Think *****************
+	// reasonerManager.update(delta_time);
+	// //***************** Act   *****************
+	optionManager.update(delta_time, &privateBlackboard, sharedBlackboard);
+
+	// this->move(kinematics.movementVelocity);
+	// this->rotate(kinematics.rotationVelocity);
+}
+
+void Npc::setSharedBlackboard(Blackboard *sharedBlackboard) {
+	this->sharedBlackboard = sharedBlackboard;
+}
+
+void Npc::init(Vector2 position, float rotation, Color color) {
+	kinematics.position = position;
+	kinematics.rotation = rotation;
+	this->color = color;
 }

@@ -15,6 +15,7 @@ target("uebung_001") do
 	add_includedirs("include")
 
 	add_deps("npc")
+	add_deps("player")
 	add_packages("raylib")
 	add_defines("PLATFORM_DESKTOP")
 
