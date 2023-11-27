@@ -19,7 +19,9 @@ class OptionManager {
 		void clearOption();
 		void setOption(Option* option);
 	private:
+	// managed
 		Option *option;
+		// not managed
 		Kinematics *kinematics;
 };
 

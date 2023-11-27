@@ -12,13 +12,13 @@ void SteeringBehaviourSeek::getKnowledge(Blackboard *privateBlackboard, Blackboa
 	);
 	if(targetKnowledge != nullptr) {
 		Vector2 targetPosition = targetKnowledge->targetPosition;
-		this->setTarget(targetPosition);
+		this->target = targetPosition;
 	}
 }
 
 SteeringForce SteeringBehaviourSeek::getForce() {
 	Vector2 direction = Vector2Subtract(
-		target,
+		this->target,
 		kinematics->position
 	);
 
@@ -47,8 +47,4 @@ SteeringForce SteeringBehaviourSeek::getForce() {
 		movementForce,
 		rotationForce
 	);
-}
-
-void SteeringBehaviourSeek::setTarget(Vector2 target) {
-	this->target = target;
 }

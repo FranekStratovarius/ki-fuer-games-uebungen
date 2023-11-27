@@ -7,13 +7,13 @@
 #include "math.hpp"
 
 OptionManager::OptionManager(Kinematics *kinematics) {
-	option = new SteeringBehaviourFlee();
-	dynamic_cast<SteeringBehaviour*>(option)->setKinematics(kinematics);
+	this->option = new SteeringBehaviourFlee();
+	dynamic_cast<SteeringBehaviour*>(this->option)->setKinematics(kinematics);
 	this->kinematics = kinematics;
 }
 
 void OptionManager::update(float delta_time, Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
-	option->update(delta_time, privateBlackboard, sharedBlackboard);
+	this->option->update(delta_time, privateBlackboard, sharedBlackboard);
 }
 
 void OptionManager::clearOption() {
@@ -21,10 +21,10 @@ void OptionManager::clearOption() {
 }
 
 void OptionManager::setOption(Option* option) {
-	delete this->option;
+	this->clearOption();
 	SteeringBehaviour* steeringBehaviourOption = dynamic_cast<SteeringBehaviour*>(option);
 	if (steeringBehaviourOption != nullptr) {
-		steeringBehaviourOption->setKinematics(kinematics);
+		steeringBehaviourOption->setKinematics(this->kinematics);
 	}
 	this->option = option;
 }

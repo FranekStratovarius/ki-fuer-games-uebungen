@@ -4,21 +4,21 @@
 #include "target_knowledge.hpp"
 
 Player::Player() {
-	position = Vector2{0.0, 0.0};
-	rotation = 0.0f;
-	color = RED;
+	this->position = Vector2{0.0, 0.0};
+	this->rotation = 0.0f;
+	this->color = RED;
 }
 
 void Player::update(Vector2 moveDirection, float delta_time, Blackboard *sharedBlackboard) {
-	position = Vector2Add(
-		position,
+	this->position = Vector2Add(
+		this->position,
 		Vector2Scale(
 			moveDirection,
-			delta_time * speed
+			delta_time * this->speed
 		)
 	);
 	if (moveDirection.x != 0 || moveDirection.y != 0) {
-		rotation = atan2(
+		this->rotation = atan2(
 			moveDirection.y,
 			moveDirection.x
 		);
@@ -43,10 +43,10 @@ void Player::draw() {
 	DrawSphere(
 		{nose_position.x, 2.5f, nose_position.y},
 		0.5f,
-		SKYBLUE //this->color
+		SKYBLUE
 	);
 }
 
 Vector2 Player::getPosition() {
-	return position;
+	return this->position;
 }

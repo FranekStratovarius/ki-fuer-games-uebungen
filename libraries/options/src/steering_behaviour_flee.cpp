@@ -12,7 +12,7 @@ void SteeringBehaviourFlee::getKnowledge(Blackboard *privateBlackboard, Blackboa
 	);
 	if(targetKnowledge != nullptr) {
 		Vector2 targetPosition = targetKnowledge->targetPosition;
-		this->setTarget(targetPosition);
+		this->target = targetPosition;
 	}
 }
 
@@ -47,8 +47,4 @@ SteeringForce SteeringBehaviourFlee::getForce() {
 		movementForce,
 		rotationForce
 	);
-}
-
-void SteeringBehaviourFlee::setTarget(Vector2 target) {
-	this->target = target;
 }

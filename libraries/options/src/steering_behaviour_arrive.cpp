@@ -14,7 +14,7 @@ void SteeringBehaviourArrive::getKnowledge(Blackboard *privateBlackboard, Blackb
 	);
 	if(targetKnowledge != nullptr) {
 		Vector2 targetPosition = targetKnowledge->targetPosition;
-		this->setTarget(targetPosition);
+		this->target = targetPosition;
 	}
 }
 
@@ -63,8 +63,4 @@ SteeringForce SteeringBehaviourArrive::getForce() {
 		movementForce,
 		rotationForce
 	);
-}
-
-void SteeringBehaviourArrive::setTarget(Vector2 target) {
-	this->target = target;
 }

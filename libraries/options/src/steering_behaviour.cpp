@@ -17,22 +17,22 @@ void SteeringBehaviour::update(float delta_time, Blackboard *privateBlackboard, 
 	// limit forces
 	steeringForce.movementForce = limit(
 		Vector2Scale(steeringForce.movementForce, delta_time),
-		kinematics->maxMovementForce
+		this->kinematics->maxMovementForce
 	);
 	steeringForce.rotationForce = limit(
 		steeringForce.rotationForce,
-		kinematics->maxRotationForce
+		this->kinematics->maxRotationForce
 	);
 	// update kinematics
-	kinematics->movementVelocity = limit(
+	this->kinematics->movementVelocity = limit(
 		Vector2Add(
-			kinematics->movementVelocity,
+			this->kinematics->movementVelocity,
 			steeringForce.movementForce
 		),
-		kinematics->maxMovementVelocity
+		this->kinematics->maxMovementVelocity
 	);
-	kinematics->rotationVelocity = limit(
+	this->kinematics->rotationVelocity = limit(
 		steeringForce.rotationForce,
-		kinematics->maxMovementVelocity
+		this->kinematics->maxMovementVelocity
 	);
 }

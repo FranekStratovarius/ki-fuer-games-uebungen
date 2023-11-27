@@ -15,13 +15,11 @@
 class Npc {
 	public:
 		Npc();
-		Npc(Vector2 position, float rotation, Color color);
 		~Npc();
 		void draw();
 		void update(float delta_time);
 		void setSharedBlackboard(Blackboard *sharedBlackboard);
 	private:
-		void init(Vector2 position, float rotation, Color color);
 		void moveAndRotate();
 
 		// current status of the npc
@@ -50,7 +48,6 @@ class Npc {
 		 * der reasoner bekommt die blackboards des npcs und den pointer zur
 		 * aktuellen option und kann diese dann abändern
 		 */
-		// ReasonerManager reasonerManager;
 		Reasoner *reasoner;
 		/*
 		 * die option bekommt die kinematik des npcs und kann diese von den
@@ -59,7 +56,7 @@ class Npc {
 		 * ggf kann man der option auch mehr schnittstellen zum npc wie die
 		 * farbe geben, aber aktuell ist nicht mehr nötig
 		 */
-		OptionManager *optionManager = new OptionManager(&kinematics);
+		OptionManager *optionManager;
 };
 
 #endif // NPC_HPP

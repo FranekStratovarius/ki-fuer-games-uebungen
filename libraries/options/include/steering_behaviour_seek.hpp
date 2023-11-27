@@ -10,7 +10,6 @@ class SteeringBehaviourSeek : public SteeringBehaviour {
 	public:
 		void getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) override;
 		SteeringForce getForce() override;
-		void setTarget(Vector2 target);
 	private:
 		Vector2 target;
 };

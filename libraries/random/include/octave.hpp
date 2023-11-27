@@ -10,7 +10,6 @@ class Octave {
 		void reroll();
 	private:
 		Random random = Random();
-		int rank;
 		int signal_values_count;
 		// array with signal values s_i
 		float* signal_values;

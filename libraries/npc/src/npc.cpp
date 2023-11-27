@@ -36,16 +36,13 @@ Npc::Npc() {
 		BROWN,
 		DARKBROWN
 	};
+	
+	this->kinematics.position = position;
+	this->kinematics.rotation = (float)(rand() % 200) / 100 * M_PI;
+	this->color = colors[rand() % 20];
 
-	this->init(
-		position,
-		(float)(rand() % 200) / 100 * M_PI,
-		colors[rand() % 20]
-	);
-}
-
-Npc::Npc(Vector2 position, float rotation, Color color) {
-	this->init(position, rotation, color);
+	this->optionManager = new OptionManager(&this->kinematics);
+	this->reasoner = new KeyboardReasoner(this->optionManager);
 }
 
 Npc::~Npc() {
@@ -54,8 +51,8 @@ Npc::~Npc() {
 }
 
 void Npc::draw() {
-	float position_x = kinematics.position.x;
-	float position_z = kinematics.position.y;
+	float position_x = this->kinematics.position.x;
+	float position_z = this->kinematics.position.y;
 	// draw main body
 	DrawCapsule(
 		(Vector3) {position_x, 1.0f, position_z},
@@ -79,9 +76,9 @@ void Npc::update(float delta_time) {
 	// sensorManager.update(delta_time);
 	// //***************** Think *****************
 	// reasonerManager.update(delta_time);
-	reasoner->update(delta_time, &privateBlackboard, sharedBlackboard);
+	this->reasoner->update(delta_time, &privateBlackboard, sharedBlackboard);
 	// //***************** Act   *****************
-	optionManager->update(delta_time, &privateBlackboard, sharedBlackboard);
+	this->optionManager->update(delta_time, &privateBlackboard, sharedBlackboard);
 
 	// this->move(kinematics.movementVelocity);
 	// this->rotate(kinematics.rotationVelocity);
@@ -94,18 +91,11 @@ void Npc::setSharedBlackboard(Blackboard *sharedBlackboard) {
 	this->sharedBlackboard = sharedBlackboard;
 }
 
-void Npc::init(Vector2 position, float rotation, Color color) {
-	kinematics.position = position;
-	kinematics.rotation = rotation;
-	this->color = color;
-	this->reasoner = new KeyboardReasoner(optionManager);
-}
-
 void Npc::moveAndRotate() {
 	Vector2 newPosition = Vector2Add(kinematics.position, kinematics.movementVelocity);
-	kinematics.position = Vector2{
+	this->kinematics.position = Vector2{
 		Clamp(newPosition.x, -10, 10),
 		Clamp(newPosition.y, -10, 10)
 	};
-	kinematics.rotation = kinematics.rotation + kinematics.rotationVelocity;
+	this->kinematics.rotation = kinematics.rotation + kinematics.rotationVelocity;
 }
