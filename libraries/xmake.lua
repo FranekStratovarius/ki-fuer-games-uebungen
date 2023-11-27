@@ -44,6 +44,7 @@ target("options") do
 
 	add_deps("math")
 	add_deps("blackboard")
+	add_deps("random")
 	add_packages("raylib")
 	add_defines("PLATFORM_DESKTOP")
 end

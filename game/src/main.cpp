@@ -1,4 +1,5 @@
 #include "blackboard.hpp"
+#include "math.hpp"
 #include "option.hpp"
 #include "raylib.h"
 #include "raymath.h"
@@ -35,6 +36,8 @@ int main(void) {
 	// option.start();
 
 	float rotation = 0.0f;
+	Vector3 cameraPosition = (Vector3){ 20.0f, 10.0f, 0.0f };
+	float cameraDistance = 1.0f;
 
 	while (!WindowShouldClose()) {
 		float delta_time = GetFrameTime();
@@ -42,12 +45,18 @@ int main(void) {
 		world.update(delta_time);
 		// option.update(delta_time);
 
-		float delta_rotation = 0.0f;
+		float deltaRotation = 0.0f;
 		if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)) {
-			delta_rotation = GetMouseDelta().x * -0.01f;
+			deltaRotation = GetMouseDelta().x * -0.01f;
 		}
-		rotation += delta_rotation;
-		camera.position = Vector3RotateByAxisAngle(camera.position, (Vector3) {0.0f, 1.0f, 0.0f}, delta_rotation);
+		rotation += deltaRotation;
+		printf("%f\n", GetMouseWheelMove());
+		cameraDistance -= GetMouseWheelMove() * 0.1f;
+		cameraPosition = Vector3RotateByAxisAngle(cameraPosition, (Vector3) {0.0f, 1.0f, 0.0f}, deltaRotation);
+		camera.position = Vector3Scale(
+			cameraPosition,
+			cameraDistance
+		);
 
 		float dir_x = 0.0f;
 		float dir_y = 0.0f;

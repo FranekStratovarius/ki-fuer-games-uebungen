@@ -3,6 +3,7 @@
 #include "steering_behaviours/steering_behaviour_arrive.hpp"
 #include "steering_behaviours/steering_behaviour_flee.hpp"
 #include "steering_behaviours/steering_behaviour_seek.hpp"
+#include "steering_behaviours/steering_behaviour_wander.hpp"
 
 KeyboardReasoner::KeyboardReasoner(OptionManager *optionManager) : Reasoner(optionManager) {
 
@@ -15,5 +16,7 @@ void KeyboardReasoner::update(float delta_time, Blackboard *privateBlackboard, B
 		optionManager->setOption(new SteeringBehaviourFlee());
 	} else if (IsKeyPressed(KEY_THREE)) { // arrive
 		optionManager->setOption(new SteeringBehaviourArrive());
+	} else if (IsKeyPressed(KEY_FOUR)) { // wander
+		optionManager->setOption(new SteeringBehaviourWander());
 	}
 }

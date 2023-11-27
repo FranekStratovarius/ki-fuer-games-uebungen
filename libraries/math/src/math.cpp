@@ -20,3 +20,7 @@ float limit(float force, float maxForce) {
 float Vector2Determinant(Vector2 x, Vector2 y){
 	return x.x * y.y - y.x * x.y;
 }
+
+float degreesToRadians(float degree) {
+	return degree * M_PI / 180.0f;
+}
