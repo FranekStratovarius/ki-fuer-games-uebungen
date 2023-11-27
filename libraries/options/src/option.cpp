@@ -6,6 +6,8 @@ Option::Option(float duration) {
 	this->duration = duration;
 }
 
+Option::~Option() {}
+
 void Option::start() {
 	this->state = RUNNING;
 }

@@ -4,12 +4,16 @@
 #include "steering_behaviour_flee.hpp"
 #include "raymath.h"
 #include "steering_behaviour.hpp"
+#include "target_knowledge.hpp"
 
-SteeringBehaviourFlee::SteeringBehaviourFlee() :SteeringBehaviour() {
-}
-
-SteeringBehaviourFlee::SteeringBehaviourFlee(Kinematics *kinematic) :SteeringBehaviour() {
-	this->kinematics = kinematic;
+void SteeringBehaviourFlee::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
+	TargetKnowledge *targetKnowledge = dynamic_cast<TargetKnowledge*>(
+	sharedBlackboard->getKnowledge("target_position")
+	);
+	if(targetKnowledge != nullptr) {
+		Vector2 targetPosition = targetKnowledge->targetPosition;
+		this->setTarget(targetPosition);
+	}
 }
 
 SteeringForce SteeringBehaviourFlee::getForce() {

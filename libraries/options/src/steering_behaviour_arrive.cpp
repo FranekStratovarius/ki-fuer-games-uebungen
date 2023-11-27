@@ -3,15 +3,19 @@
 #include "raymath.h"
 #include "math.hpp"
 #include "steering_behaviour.hpp"
+#include "target_knowledge.hpp"
 #include <cmath>
 #include <cstdio>
 #include <math.h>
 
-SteeringBehaviourArrive::SteeringBehaviourArrive() :SteeringBehaviour() {
-}
-
-SteeringBehaviourArrive::SteeringBehaviourArrive(Kinematics *kinematic) :SteeringBehaviour() {
-	this->kinematics = kinematic;
+void SteeringBehaviourArrive::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
+	TargetKnowledge *targetKnowledge = dynamic_cast<TargetKnowledge*>(
+	sharedBlackboard->getKnowledge("target_position")
+	);
+	if(targetKnowledge != nullptr) {
+		Vector2 targetPosition = targetKnowledge->targetPosition;
+		this->setTarget(targetPosition);
+	}
 }
 
 SteeringForce SteeringBehaviourArrive::getForce() {

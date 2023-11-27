@@ -4,12 +4,16 @@
 
 #include "steering_behaviour_seek.hpp"
 #include "steering_behaviour.hpp"
+#include "target_knowledge.hpp"
 
-SteeringBehaviourSeek::SteeringBehaviourSeek() :SteeringBehaviour() {
-}
-
-SteeringBehaviourSeek::SteeringBehaviourSeek(Kinematics *kinematic) :SteeringBehaviour() {
-	this->kinematics = kinematic;
+void SteeringBehaviourSeek::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
+	TargetKnowledge *targetKnowledge = dynamic_cast<TargetKnowledge*>(
+	sharedBlackboard->getKnowledge("target_position")
+	);
+	if(targetKnowledge != nullptr) {
+		Vector2 targetPosition = targetKnowledge->targetPosition;
+		this->setTarget(targetPosition);
+	}
 }
 
 SteeringForce SteeringBehaviourSeek::getForce() {

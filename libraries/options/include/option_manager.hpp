@@ -13,14 +13,13 @@ class OptionManager {
 		OptionManager(Kinematics *kinematics);
 		void update(
 			float delta_time,
-			Blackboard *privateVlackboard,
+			Blackboard *privateBlackboard,
 			Blackboard *sharedBlackboard
 		);
 		void clearOption();
 		void setOption(Option* option);
 	private:
-		void moveAndRotate();
-		SteeringBehaviourFlee steeringBehaviour;
+		Option *option;
 		Kinematics *kinematics;
 };
 

@@ -8,13 +8,11 @@
 
 class SteeringBehaviourSeek : public SteeringBehaviour {
 	public:
-		SteeringBehaviourSeek();
-		SteeringBehaviourSeek(Kinematics *kinematic);
+		void getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) override;
 		SteeringForce getForce() override;
 		void setTarget(Vector2 target);
 	private:
 		Vector2 target;
-		Kinematics *kinematics;
 };
 
 #endif // STEERING_BEHAVIOUR_SEEK_HPP

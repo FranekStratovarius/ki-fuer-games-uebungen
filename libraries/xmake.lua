@@ -17,6 +17,7 @@ target("npc") do
 
 	add_deps("player")
 	add_deps("options")
+	add_deps("reasoners")
 	add_packages("raylib")
 	add_defines("PLATFORM_DESKTOP")
 end
