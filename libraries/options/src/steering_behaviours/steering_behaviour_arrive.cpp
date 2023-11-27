@@ -1,8 +1,7 @@
-#include "steering_behaviour_arrive.hpp"
+#include "steering_behaviours/steering_behaviour_arrive.hpp"
 #include "raylib.h"
 #include "raymath.h"
 #include "math.hpp"
-#include "steering_behaviour.hpp"
 #include "target_knowledge.hpp"
 #include <cmath>
 #include <cstdio>

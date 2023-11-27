@@ -4,9 +4,6 @@
 #include "option.hpp"
 #include "blackboard.hpp"
 #include "kinematics.hpp"
-#include "steering_behaviour_seek.hpp"
-#include "steering_behaviour_flee.hpp"
-#include "steering_behaviour_arrive.hpp"
 
 class OptionManager {
 	public:

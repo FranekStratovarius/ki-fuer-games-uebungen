@@ -2,8 +2,7 @@
 #include <valarray>
 #include "math.hpp"
 
-#include "steering_behaviour_seek.hpp"
-#include "steering_behaviour.hpp"
+#include "steering_behaviours/steering_behaviour_seek.hpp"
 #include "target_knowledge.hpp"
 
 void SteeringBehaviourSeek::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {

@@ -1,4 +1,4 @@
-#include "steering_force.hpp"
+#include "steering_behaviours/steering_force.hpp"
 #include "raymath.h"
 
 SteeringForce::SteeringForce(Vector2 movementForce, float rotationForce) {

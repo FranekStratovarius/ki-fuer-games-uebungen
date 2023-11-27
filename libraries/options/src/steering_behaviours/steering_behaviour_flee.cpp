@@ -1,9 +1,8 @@
 #include <cstdio>
 #include "math.hpp"
 
-#include "steering_behaviour_flee.hpp"
+#include "steering_behaviours/steering_behaviour_flee.hpp"
 #include "raymath.h"
-#include "steering_behaviour.hpp"
 #include "target_knowledge.hpp"
 
 void SteeringBehaviourFlee::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {

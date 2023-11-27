@@ -1,8 +1,8 @@
 #include "keyboard_reasoner.hpp"
 #include "raylib.h"
-#include "steering_behaviour_arrive.hpp"
-#include "steering_behaviour_flee.hpp"
-#include "steering_behaviour_seek.hpp"
+#include "steering_behaviours/steering_behaviour_arrive.hpp"
+#include "steering_behaviours/steering_behaviour_flee.hpp"
+#include "steering_behaviours/steering_behaviour_seek.hpp"
 
 KeyboardReasoner::KeyboardReasoner(OptionManager *optionManager) : Reasoner(optionManager) {
 
