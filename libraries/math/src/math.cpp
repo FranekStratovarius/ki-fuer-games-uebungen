@@ -1,24 +1,34 @@
 #include "math.hpp"
 
-Vector2 limit(Vector2 force, float maxForce) {
-	float forceLength = Vector2Length(force);
-	if (forceLength > maxForce) {
-		return Vector2Scale(force, maxForce / forceLength);
+Vector2 limit(Vector2 value, float maxValue) {
+	float forceLength = Vector2Length(value);
+	if (forceLength > maxValue) {
+		return Vector2Scale(value, maxValue / forceLength);
 	}
-	return force;
+	return value;
 }
 
-float limit(float force, float maxForce) {
-	if (force > maxForce) {
-		return maxForce;
-	} else if (force < -maxForce) {
-		return -maxForce;
+Vector2 limit(Vector2 value, float minValue, float maxValue) {
+	float vectorLength = Vector2Length(value);
+	if (vectorLength > maxValue) {
+		return Vector2Scale(value, maxValue / vectorLength);
+	} else if (vectorLength < minValue) {
+		return Vector2Scale(value, minValue / vectorLength);
 	}
-	return force;
+	return value;
 }
 
-float Vector2Determinant(Vector2 x, Vector2 y){
-	return x.x * y.y - y.x * x.y;
+float limit(float value, float maxValue) {
+	return limit(value, -maxValue, maxValue);
+}
+
+float limit(float value, float minValue, float maxValue) {
+	if (value > maxValue) {
+		return maxValue;
+	} else if (value < minValue) {
+		return minValue;
+	}
+	return value;
 }
 
 float degreesToRadians(float degree) {

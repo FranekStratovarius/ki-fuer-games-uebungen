@@ -6,9 +6,10 @@
 #include "raylib.h"
 #include "raymath.h"
 
-Vector2 limit(Vector2 force, float maxForce);
-float limit(float force, float maxForce);
-float Vector2Determinant(Vector2 x, Vector2 y);
+Vector2 limit(Vector2 value, float maxValue);
+Vector2 limit(Vector2 value, float minValue, float maxValue);
+float limit(float value, float maxValue);
+float limit(float value, float minValue, float maxValue);
 float degreesToRadians(float degree);
 
 #endif // MATH_HPP
