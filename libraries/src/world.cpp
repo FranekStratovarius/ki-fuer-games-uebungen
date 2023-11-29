@@ -1,4 +1,5 @@
 #include "world.hpp"
+#include "buddy_knowledge.hpp"
 
 World::World() : World(10) {}
 
@@ -9,6 +10,10 @@ World::World(int number_of_npcs) {
 		this->npcs_in_world.push_back(npc);
 		npc->setSharedBlackboard(sharedBlackboard);
 	}
+	sharedBlackboard->setKnowledge(
+		"buddies",
+		new BuddyKnowledge(this->npcs_in_world)
+	);
 }
 
 World::~World() {

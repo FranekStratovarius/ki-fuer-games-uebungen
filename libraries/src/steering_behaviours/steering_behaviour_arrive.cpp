@@ -9,7 +9,7 @@
 
 void SteeringBehaviourArrive::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
 	TargetKnowledge *targetKnowledge = dynamic_cast<TargetKnowledge*>(
-	sharedBlackboard->getKnowledge("target_position")
+		sharedBlackboard->getKnowledge("target_position")
 	);
 	if(targetKnowledge != nullptr) {
 		Vector2 targetPosition = targetKnowledge->targetPosition;

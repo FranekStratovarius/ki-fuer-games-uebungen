@@ -19,6 +19,7 @@ class Npc {
 		void draw();
 		void update(float delta_time);
 		void setSharedBlackboard(Blackboard *sharedBlackboard);
+		Kinematics *getKinematics();
 	private:
 		void moveAndRotate();
 

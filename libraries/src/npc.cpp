@@ -91,11 +91,15 @@ void Npc::setSharedBlackboard(Blackboard *sharedBlackboard) {
 	this->sharedBlackboard = sharedBlackboard;
 }
 
+Kinematics *Npc::getKinematics() {
+	return &this->kinematics;
+}
+
 void Npc::moveAndRotate() {
 	Vector2 newPosition = Vector2Add(kinematics.position, kinematics.movementVelocity);
 	this->kinematics.position = Vector2{
-		Clamp(newPosition.x, -10, 10),
-		Clamp(newPosition.y, -10, 10)
+		Clamp(newPosition.x, -40, 40),
+		Clamp(newPosition.y, -40, 40)
 	};
 	this->kinematics.rotation = kinematics.rotation + kinematics.rotationVelocity;
 }

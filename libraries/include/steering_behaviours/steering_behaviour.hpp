@@ -9,11 +9,12 @@
 
 class SteeringBehaviour : public Option {
 	public:
-		void setKinematics(Kinematics *kinematic);
+		virtual void setKinematics(Kinematics *kinematic);
 		void update(float delta_time, Blackboard *privateBlackboard, Blackboard *sharedBlackboard) override;
 		virtual void getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) = 0;
 		virtual SteeringForce getForce() = 0;
 	protected:
+		SteeringForce buildSteeringForce(Vector2 direction);
 		Kinematics *kinematics;
 };
 
