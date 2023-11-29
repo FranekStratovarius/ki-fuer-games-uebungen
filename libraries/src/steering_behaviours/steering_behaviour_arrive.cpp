@@ -2,7 +2,7 @@
 #include "raylib.h"
 #include "raymath.h"
 #include "math.hpp"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 #include <cmath>
 #include <cstdio>
 #include <math.h>

@@ -26,7 +26,7 @@ int main(void) {
 
 	SetTargetFPS(60);
 
-	World world = World(10);
+	World world = World(20);
 	Player player = Player();
 	Blackboard *sharedBlackboard = world.getSharedBlackboard();
 

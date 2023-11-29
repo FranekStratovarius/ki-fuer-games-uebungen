@@ -6,7 +6,6 @@
 
 class KeyboardReasoner : public Reasoner {
 	public:
-		KeyboardReasoner(OptionManager *optionManager);
 		void update(
 			float delta_time,
 			Blackboard *privateBlackboard,

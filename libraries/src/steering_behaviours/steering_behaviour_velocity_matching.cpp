@@ -1,4 +1,4 @@
-#include "buddy_knowledge.hpp"
+#include "knowledge/buddy_knowledge.hpp"
 #include "math.hpp"
 
 #include "raymath.h"

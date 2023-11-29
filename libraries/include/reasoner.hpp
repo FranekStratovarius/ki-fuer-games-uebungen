@@ -5,8 +5,8 @@
 
 class Reasoner {
 	public:
-		Reasoner(OptionManager *optionManager);
 		virtual ~Reasoner();
+		void setOptionManager(OptionManager *optionManager);
 		virtual void update(
 			float delta_time,
 			Blackboard *privateBlackboard,

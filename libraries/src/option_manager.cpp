@@ -4,7 +4,7 @@
 #include "steering_behaviours/steering_behaviour.hpp"
 #include "steering_behaviours/steering_behaviour_flee.hpp"
 #include "steering_behaviours/steering_force.hpp"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 #include "math.hpp"
 
 OptionManager::OptionManager(Kinematics *kinematics) {

@@ -1,6 +1,6 @@
 #include "reasoner.hpp"
 
-Reasoner::Reasoner(OptionManager *optionManager) {
+void Reasoner::setOptionManager(OptionManager *optionManager) {
 	this->optionManager = optionManager;
 }
 

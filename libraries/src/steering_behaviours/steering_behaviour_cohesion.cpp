@@ -1,6 +1,6 @@
 #include <cmath>
 
-#include "buddy_knowledge.hpp"
+#include "knowledge/buddy_knowledge.hpp"
 #include "raymath.h"
 
 #include "steering_behaviours/steering_behaviour_cohesion.hpp"

@@ -1,5 +1,6 @@
 #include "world.hpp"
-#include "buddy_knowledge.hpp"
+#include "knowledge/buddy_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 
 World::World() : World(10) {}
 
@@ -13,6 +14,10 @@ World::World(int number_of_npcs) {
 	sharedBlackboard->setKnowledge(
 		"buddies",
 		new BuddyKnowledge(this->npcs_in_world)
+	);
+	sharedBlackboard->setKnowledge(
+		"food_place",
+		new TargetKnowledge(Vector2{0.0f, 0.0f})
 	);
 }
 

@@ -1,7 +1,7 @@
 #include "steering_behaviours/steering_behaviour.hpp"
 #include "math.hpp"
 #include "raymath.h"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 
 void SteeringBehaviour::setKinematics(Kinematics *kinematics) {
 	this->kinematics = kinematics;

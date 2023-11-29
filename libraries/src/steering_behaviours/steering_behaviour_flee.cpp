@@ -3,7 +3,7 @@
 
 #include "steering_behaviours/steering_behaviour_flee.hpp"
 #include "raymath.h"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 
 void SteeringBehaviourFlee::getKnowledge(Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
 	TargetKnowledge *targetKnowledge = dynamic_cast<TargetKnowledge*>(

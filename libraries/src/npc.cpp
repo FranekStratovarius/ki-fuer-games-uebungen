@@ -1,12 +1,13 @@
 #include <cstdio>
 
 #include "blackboard.hpp"
+#include "fish_reasoner.hpp"
 #include "keyboard_reasoner.hpp"
 #include "raylib.h"
 #include "raymath.h"
 
 #include "npc.hpp"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 
 Npc::Npc() {
 	Vector2 position = {
@@ -41,8 +42,10 @@ Npc::Npc() {
 	this->kinematics.rotation = (float)(rand() % 200) / 100 * M_PI;
 	this->color = colors[rand() % 20];
 
+	// this->reasoner = new KeyboardReasoner();
+	this->reasoner = new FishReasoner(&this->kinematics);
 	this->optionManager = new OptionManager(&this->kinematics);
-	this->reasoner = new KeyboardReasoner(this->optionManager);
+	this->reasoner->setOptionManager(this->optionManager);
 }
 
 Npc::~Npc() {

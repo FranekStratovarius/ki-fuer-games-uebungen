@@ -1,7 +1,7 @@
 #include <cstdio>
 
 #include "player.hpp"
-#include "target_knowledge.hpp"
+#include "knowledge/target_knowledge.hpp"
 
 Player::Player() {
 	this->position = Vector2{0.0, 0.0};
@@ -24,6 +24,7 @@ void Player::update(Vector2 moveDirection, float delta_time, Blackboard *sharedB
 		);
 	}
 	sharedBlackboard->setKnowledge("target_position", new TargetKnowledge(position));
+	sharedBlackboard->setKnowledge("food_place", new TargetKnowledge(position));
 }
 
 void Player::draw() {
