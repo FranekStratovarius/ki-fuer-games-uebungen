@@ -47,3 +47,14 @@ target("random") do
 	add_packages("raylib")
 	add_defines("PLATFORM_DESKTOP")
 end
+
+target("path_finding") do
+	set_kind("shared")
+	set_warnings("all", "error")
+	
+	add_files("path_finding/src/**.cpp")
+	add_includedirs("path_finding/include", {public = true})
+
+	add_packages("raylib")
+	add_defines("PLATFORM_DESKTOP")
+end
