@@ -5,6 +5,7 @@
 #include "steering_behaviours/steering_behaviour_arrive.hpp"
 #include "steering_behaviours/steering_behaviour_wander.hpp"
 #include "steering_behaviours/steering_behaviour_flocking.hpp"
+#include "steering_behaviours/steering_behaviour_path_grappling_hooks.hpp"
 
 void KeyboardReasoner::update(float delta_time, Blackboard *privateBlackboard, Blackboard *sharedBlackboard) {
 	if (IsKeyPressed(KEY_ONE)) {	// seek
@@ -17,5 +18,7 @@ void KeyboardReasoner::update(float delta_time, Blackboard *privateBlackboard, B
 		this->optionManager->setOption(new SteeringBehaviourWander());
 	} else if (IsKeyPressed(KEY_FIVE)) { // flocking
 		this->optionManager->setOption(new SteeringBehaviourFlocking());
+	} else if (IsKeyPressed(KEY_SIX)) { // grappling hooks
+		this->optionManager->setOption(new SteeringBehaviourPathGrapplingHooks());
 	}
 }

@@ -42,8 +42,8 @@ Npc::Npc() {
 	this->kinematics.rotation = (float)(rand() % 200) / 100 * M_PI;
 	this->color = colors[rand() % 20];
 
-	// this->reasoner = new KeyboardReasoner();
-	this->reasoner = new FishReasoner(&this->kinematics);
+	this->reasoner = new KeyboardReasoner();
+	// this->reasoner = new FishReasoner(&this->kinematics);
 	this->optionManager = new OptionManager(&this->kinematics);
 	this->reasoner->setOptionManager(this->optionManager);
 }

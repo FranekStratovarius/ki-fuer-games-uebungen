@@ -7,6 +7,7 @@
 #include "world.hpp"
 #include "player.hpp"
 #include "option/option_text_output.hpp"
+#include "knowledge/path_knowledge.hpp"
 #include <algorithm>
 #include <cmath>
 #include <math.h>
@@ -29,6 +30,15 @@ int main(void) {
 	World world = World(20);
 	Player player = Player();
 	Blackboard *sharedBlackboard = world.getSharedBlackboard();
+	Vector2 path[] = {
+		Vector2{0, 0},
+		Vector2{20, 0},
+		Vector2{20, 20},
+		Vector2{-20, 20},
+		Vector2{-20, -20},
+		Vector2{20, -20}
+	};
+	sharedBlackboard->setKnowledge("grappling_path", new PathKnowledge(path, 6));
 
 	// OptionTextOutput option = OptionTextOutput(
 	// 	"Hallo, hier kommt dann text raus."
